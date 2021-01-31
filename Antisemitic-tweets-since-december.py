@@ -60,8 +60,6 @@ search_term_jewishsupremacists = f'#JewishSupremacists since:{date_since}'
 search_term_soros = f'"george soros" (-@georgesoros) since:{date_since}'
 search_term_jews = f'"the jews" since:{date_since}'
 
-#Use a for loop to plot each hashtag on the same set of axes. Use another loop to plot george soros on "the jews" on the same set of axes. Then look at the correlation between the two.
-
 #Create lists of interesting search terms
 search_terms_hashtags = [search_term_jewishsupremacy,search_term_jewishprivilege,search_term_protocolsofzion,search_term_jewishtruth]
 search_terms_soros_jews = [search_term_soros,search_term_jews]
@@ -190,8 +188,7 @@ df = pd.DataFrame(data=d) #Create pandas dataframe
 cor = df.corr(method='pearson')
 print(cor)
 
-# %%Percentage of Soros tweets that mention "The jews"
-
+#Percentage of Soros tweets that mention "The jews"
 jews_tweets = enumerate(sntwitter.TwitterSearchScraper(search_term_jews).get_items())
 soros_tweets = enumerate(sntwitter.TwitterSearchScraper(search_term_soros).get_items())
 
